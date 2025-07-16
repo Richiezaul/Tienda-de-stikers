@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<main style="display: flex;">
+  <aside style="width: 200px; padding: 1rem; background: #0c2461; border-radius: 10px;">
+    <h3 style="color: beige;">Categorías</h3>
+    <ul>
+      <li><a href="/">Todas</a></li>
+      <li><a href="/?category=Moto_Logo">Moto Logo</a></li>
+      <li><a href="/?category=Moto_Speed">Moto Speed</a></li>
+      <li><a href="/?category=Animados">Animados</a></li>
+    </ul>
+  </aside>
+
+  <section style="flex: 1;">
+    <div class="product-grid">
+      <% stickers.forEach(sticker => { %>
+        <div class="product">
+          <img src="<%= sticker.image %>" alt="<%= sticker.name %>" />
+          <h4><%= sticker.name %></h4>
+          <p>$<%= sticker.price.toFixed(2) %></p>
+          <button onclick="addToCart('<%= sticker.name %>', <%= sticker.price %>)">Agregar al carrito</button>
+          <a href="/preview?sticker=stickers/<%= sticker.pathName %>" class="button-link">Vista Previa</a>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount()
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = document.getElementById('cart-count');
+    if (count) count.textContent = cart.length;
+  }
+</script>
+
+<%- include('partials/footer') %>

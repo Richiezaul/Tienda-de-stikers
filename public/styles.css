@@ -1,0 +1,173 @@
+
+/* === variables de color y sombras === */
+:root {
+  --bg-main: #0a3d62;
+  --bg-card: #0a3d62;
+  --text-primary: #e0e04;
+  --text-muted: #a0a0ab;
+  --accent-1: #ff9ff3;
+  --accent-2: #feca57;
+  --accent-3: #48dbfb;
+  --accent-4: #5f27cd;
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+  --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* === reset y body === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 2px;
+}
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  padding: 1rem 0;
+}
+
+/* === layout con grid === */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* === cabecera y navegación === */
+header, nav {
+  background-color: #0a3d62;
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 2rem;
+}
+nav a {
+  display: inline-block;
+  margin-right: 2rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition), color var(--transition);
+}
+nav a:hover {
+  background-color: rgba(72, 219, 251, 0.2);
+  color: var(--accent-3);
+}
+
+/* === tarjetas de productos modernizadas === */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+.card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.card-body {
+  padding: 1.25rem;
+}
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+.card-price {
+  color: var(--accent-2);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary {
+  background-color: var(--accent-1);
+  color: var(--bg-main);
+  box-shadow: 0 4px 8px rgba(255, 159, 243, 0.4);
+}
+.btn-primary:hover {
+  background-color: var(--accent-3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(72, 219, 251, 0.5);
+}
+.btn-secondary {
+  background-color: var(--accent-4);
+  color: var(--text-primary);
+  box-shadow: 0 4px 8px rgba(95, 39, 205, 0.4);
+}
+.btn-secondary:hover {
+  background-color: var(--accent-2);
+  box-shadow: 0 6px 12px rgba(254, 202, 87, 0.5);
+}
+
+/* === formularios pulidos === */
+form {
+  background-color: #0c2461;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  max-width: 480px;
+  margin: 2rem auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+input, textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(160, 160, 171, 0.5);
+  border-radius: var(--border-radius);
+  background: white;
+  color: var(--text-primary);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-3);
+  box-shadow: 0 0 8px rgba(72, 219, 251, 0.4);
+}
+
+/* === sección de pie de página === */
+footer {
+  background-color: #0c2461;
+  padding: 1.5rem 2rem;
+  margin: 3rem 5.8em;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-soft);
+
+/* === ajustes responsivos === */
+@media (max-width: 768px) {
+  nav a {
+    margin-right: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .container {
+    gap: 1.5rem;
+  }
+}

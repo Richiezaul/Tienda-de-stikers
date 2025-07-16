@@ -1,0 +1,38 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Sticker Shop</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<header>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="/">
+        <img src="/images/logo-sticker-shop.png" alt="Sticker Shop Logo" style="height: 100px;">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/contact">Contacto</a></li>
+      <li><a href="/cart">🛒 Carrito (<span id="cart-count">0</span>)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = document.getElementById('cart-count');
+    if (count) count.textContent = cart.length;
+  }
+
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  window.addEventListener('DOMContentLoaded', updateCartCount);
+</script>

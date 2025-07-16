@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Moto Logo 1",
+    "price": 500,
+    "image": "/images/stickers/MotoLogo1.png",
+    "category": "Moto_Logo",
+    "pathName": "MotoLogo1.png"
+  },
+  {
+    "name": "Moto Logo 2",
+    "price": 500,
+    "image": "/images/stickers/MotoLogo2.png",
+    "category": "Moto_Logo",
+    "pathName": "MotoLogo2.png"
+  },
+  {
+    "name": "Moto Speed 10",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed10.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed10.png"
+  },
+  {
+    "name": "Moto Speed 1",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed1.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed1.png"
+  },
+  {
+    "name": "Moto Speed 2",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed2.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed2.png"
+  },
+  {
+    "name": "Moto Speed 3",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed3.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed3.png"
+  },
+  {
+    "name": "Moto Speed 4",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed4.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed4.png"
+  },
+  {
+    "name": "Moto Speed 5",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed5.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed5.png"
+  },
+  {
+    "name": "Moto Speed 6",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed6.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed6.png"
+  },
+  {
+    "name": "Moto Speed 7",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed7.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed7.png"
+  },
+  {
+    "name": "Moto Speed 8",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed8.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed8.png"
+  },
+  {
+    "name": "Moto Speed 9",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed9.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed9.png"
+  },
+  {
+    "name": "Moto Speed 10",
+    "price": 400,
+    "image": "/images/stickers/MotoSpeed10.png",
+    "category": "Moto_Speed",
+    "pathName": "MotoSpeed10.png"
+  },
+
+  {
+    "name": "Animados 1",
+    "price": 700,
+    "image": "/images/stickers/Animado1.png",
+    "category": "Animados",
+    "pathName": "Animado1.png"
+  },
+  {
+    "name": "Animados 2",
+    "price": 700,
+    "image": "/images/stickers/Animado2.png",
+    "category": "Animados",
+    "pathName": "Animado2.png"
+  },
+  {
+    "name": "Animados 3",
+    "price": 700,
+    "image": "/images/stickers/Animado3.png",
+    "category": "Animados",
+    "pathName": "Animado3.png"
+  }
+
+]

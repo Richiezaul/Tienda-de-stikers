@@ -1,0 +1,74 @@
+<%- include('partials/header') %>
+
+<main style="text-align: center;">
+  <h2>Vista previa del sticker en la moto</h2>
+
+  <div id="preview-container" style="position: relative; display: inline-block;">
+    <img src="/images/moto.jpeg" alt="Moto" id="moto-bg" style="width: auto;">
+    <img id="sticker" src="/images/placeholder.png" alt="Sticker"
+         style="position: absolute; top: 50px; left: 50px; width: 100px; cursor: move;">
+  </div>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const stickerFile = params.get("sticker");
+    const stickerImg = document.getElementById("sticker");
+
+    if (stickerFile) {
+      stickerImg.src = `/images/${stickerFile}`;
+    }
+
+    let isDragging = false;
+    let offsetX = 0, offsetY = 0;
+
+    stickerImg.addEventListener("mousedown", function (e) {
+      isDragging = true;
+      offsetX = e.offsetX;
+      offsetY = e.offsetY;
+    });
+
+    document.addEventListener("mousemove", function (e) {
+      if (!isDragging) return;
+
+      const container = document.getElementById("preview-container");
+      const containerRect = container.getBoundingClientRect();
+      const stickerRect = stickerImg.getBoundingClientRect();
+
+      let newX = e.clientX - containerRect.left - offsetX;
+      let newY = e.clientY - containerRect.top - offsetY;
+
+      // Evitar que se salga del contenedor (límites)
+      const maxX = container.clientWidth - stickerImg.offsetWidth;
+      const maxY = container.clientHeight - stickerImg.offsetHeight;
+
+      newX = Math.max(0, Math.min(newX, maxX));
+      newY = Math.max(0, Math.min(newY, maxY));
+
+      stickerImg.style.left = `${newX}px`;
+      stickerImg.style.top = `${newY}px`;
+    });
+
+    document.addEventListener("mouseup", function () {
+      isDragging = false;
+    });
+
+    // Redimensionar con scroll sin salirse
+    stickerImg.addEventListener("wheel", function (e) {
+      e.preventDefault();
+      const container = document.getElementById("preview-container");
+      const current = stickerImg.offsetWidth;
+      const next = e.deltaY < 0 ? current + 5 : current - 5;
+
+      if (next >= 30 && next <= 300) {
+        // Limitar tamaño máximo para que no se pase del contenedor
+        if (next <= container.clientWidth && next <= container.clientHeight) {
+          stickerImg.style.width = `${next}px`;
+        }
+      }
+    });
+  });
+</script>
+
+<%- include('partials/footer') %>
