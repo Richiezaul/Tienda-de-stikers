@@ -1,45 +1,47 @@
-# 🛒 Sticker Shop - Tienda Online en Node.js
+# 🛒 Sticker Shop - Tienda Virtual de Stickers en Node.js
 
-Una tienda virtual de stickers con funcionalidades completas, incluyendo carrito, vista previa sobre una moto, envío de factura en PDF por correo electrónico y más.
-
----
-
-## 🚀 Características
-
-- Visualización de productos organizados por categorías.
-- Carrito funcional con almacenamiento en `localStorage`.
-- Vista previa de stickers con arrastrar y redimensionar.
-- Generación de factura en PDF usando `pdfkit`.
-- Envío automático de factura por correo con `nodemailer`.
-- Diseño moderno y adaptable con CSS.
+Una tienda online moderna e interactiva para comprar stickers personalizados. Permite navegar por categorías, agregar productos al carrito, previsualizar stickers sobre una moto, y generar facturas en PDF enviadas automáticamente por correo electrónico.
 
 ---
 
-## 📦 Instalación
+## 🚀 Características principales
 
-1. Clona o descarga este repositorio.
-2. Navega al directorio del proyecto:
+- Visualización de stickers organizados por categorías.
+- Carrito de compras funcional con `localStorage` y contador actualizado en el navbar.
+- Vista previa interactiva sobre una moto, con opción de arrastrar y redimensionar el sticker.
+- Generación de factura en formato PDF con estilo profesional (cuadro de productos, colores suaves, logo, impuestos del 18%).
+- Envío automático de la factura por correo electrónico usando `nodemailer`.
+- El carrito se borra automáticamente solo si el envío fue exitoso.
+- Interfaz moderna con logo personalizado.
+
+---
+
+## 📦 Instalación y ejecución
+
+1. Clona o descarga este repositorio:
+
    ```bash
+   git clone https://github.com/tuusuario/sticker-shop.git
    cd sticker-shop
    ```
-3. Instala las dependencias:
+
+2. Instala las dependencias:
+
    ```bash
    npm install
    ```
 
----
+3. Inicia el servidor:
 
-## ▶️ Ejecución del proyecto
+   ```bash
+   npm start
+   ```
 
-```bash
-npm start
-```
+4. Abre tu navegador en:
 
-Abre tu navegador y ve a:
-
-```
-http://localhost:3000
-```
+   ```
+   http://localhost:3000
+   ```
 
 ---
 
@@ -52,11 +54,14 @@ http://localhost:3000
 │   └── stickers.json
 ├── routes/
 │   └── index.js
+├── utils/
+│   └── generarFacturaPDF.js
 ├── views/
 │   ├── index.ejs
 │   ├── cart.ejs
 │   ├── contact.ejs
 │   ├── preview.ejs
+│   ├── message-received.ejs
 │   └── partials/
 │       ├── header.ejs
 │       └── footer.ejs
@@ -64,47 +69,47 @@ http://localhost:3000
 │   ├── css/
 │   │   └── style.css
 │   └── images/
-└── invoices/
+│       ├── moto.png
+│       ├── logo.png
+│       ├── sticker1.png
+│       └── ...
+├── invoices/
+└── README.md
 ```
 
 ---
 
-## 🧾 Configuración de Nodemailer
+## 📤 Configuración del correo (Nodemailer)
 
-Abre el archivo `routes/index.js` y reemplaza:
+Abre `routes/index.js` y reemplaza:
 
 ```js
-user: "TUCORREO@gmail.com",
-pass: "TU_APP_PASSWORD"
+auth: {
+  user: "TUCORREO@gmail.com",
+  pass: "TU_APP_PASSWORD"
+}
 ```
 
-> ⚠️ Usa una contraseña de aplicación de Gmail y no tu contraseña real. Activa la verificación en dos pasos y genera una clave de app segura.
+> ⚠️ **Importante**: Usa una contraseña de aplicación de Gmail, no tu contraseña normal. Activa la verificación en dos pasos y crea una clave de app desde [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
 
 ---
 
-## 🖼️ Agregar Imágenes
+## 🖼️ Agregar imágenes
 
-Coloca tus imágenes en la carpeta:
+Coloca tus stickers y archivos necesarios en la carpeta:
 
 ```
 /public/images/
 ```
 
-Ejemplos:
-- `moto.png` (para la vista previa)
+Ejemplo de archivos:
+
+- `moto.png` → fondo para la vista previa.
 - `sticker1.png`, `sticker2.png`, etc.
+- `logo.png` → logo mostrado en la barra de navegación.
 
 ---
 
-## ✅ Créditos
-
-Desarrollado con ❤️ usando:
-- Node.js
-- Express
-- EJS
-- PDFKit
-- Nodemailer
+Tecnologías: **Node.js**, **Express**, **EJS**, **PDFKit**, **Nodemailer**, **HTML/CSS/JS**
 
 ---
-
-¡Disfruta creando tu tienda de stickers personalizada!
